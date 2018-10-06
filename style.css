@@ -1,18 +1,17 @@
 #nav {
   padding: 20px;
   text-align: center;
-  background: #78909c;
   color: white;
   font-size: 70px;
-  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #263238;
 }
 
 #left {
-  text-align: center;
+  text-align: left;
   height:100%;
   position: absolute;
-  top: 20%;
-  bottom: 0;
+  top: 15%;
+  bottom: 20%;
   left: 0;
   width: 75%;
   overflow-y: scroll;
@@ -20,11 +19,18 @@
 
 #right {
   height:100%;
-  text-align: center;
+  text-align: left;
   position: absolute;
-  top: 20%;
-  bottom: 0;
+  top: 15%;
+  bottom: 20%;
   right: 0;
   overflow-y: scroll;
   width: 25%;
+}
+
+#rightIcons {
+    height:5%;
+    
+    position:fixed;
+    width:100%;
 }
