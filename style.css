@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+body{
+  font-family: 'Roboto';
+}
+
 
 #nav {
   padding: 20px;
@@ -8,7 +14,7 @@
 }
 
 #left {
-  padding-left: 5%;
+  padding-left: 15%;
   text-align: left;
   height:85%;
   position: absolute;
@@ -20,7 +26,7 @@
 }
 
 #right {
-  padding-right: 5%;
+  padding-right: 15%;
   height:100%;
   text-align: left;
   position: fixed;
@@ -75,59 +81,111 @@
   border: 1px solid #ccc;
   border-top: none;
   overflow-y: scroll;
+  overflow: visible;
+  height: auto;
 
 
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  font-size: auto;
+}
+
+/* jQuery side mobile menu css --------------------------------*/
+
+#sideMenu,
+.side-navi-item,
+.side-navi-data,
+.side-navi-tab {  margin: 0; padding: 0;  }
+#sideMenu {
+    position: fixed;
+    right: 50px;
+    top: 35%;
+}
+/* items */
+.side-navi-item-default {
+    height: 50px;
+    display: inline;
+}
+.side-navi-item {
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    transform: rotate(-90deg);
+    transform-origin: left top 0;
+    color: #fff;
+    background-color: grey;
+    cursor: pointer;
+}
+.side-navi-item.item1 {  top: 10px;  }
+.side-navi-item.item2 {  top: 200px;  }
+.side-navi-item.item3 {  top: 400px;  }
+.side-navi-item.item4 {  top: 600px;  }
+
+.side-navi-item.active,
+.side-navi-item:hover {  background-color: #e5e5e5; color: #000;  }
+.side-navi-item > div {  padding-top: 15px; text-align: center;  }
+/* data wrapper */
+.side-navi-data {
+    position: absolute;
+    top: 10;
+    left: 50px;
+    width: 650px;
+    height: 1250px;
+    background-color: #e5e5e5;
+}
+/* tab wrapper */
+.side-navi-tab {  display: inline;  }
+.side-navi-tab.active {  display: inline-block;  }
+.side-navi-tab > div {  padding: 30px;  }
+
+
+
 /* Media Queires  */
 
 @media screen and (max-width:760px) {
+/* 760px and below the initial menu screen will disable  */
 
-  .tab{
-    float: right;
-    width: 50%;
-    height: 50%;
-    background-color: white;
-
-  }
-
-  .tab button {
-    display: block;
-    background-color: none;
-    color: black;
-    width: 100%;
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-
-  }
-
-  .tab button:hover {
-    background-color: white;
-  }
-
-  .tab button.active {
-    background-color: white;
-  }
-
-
-
-  /* Style the tab content */
-  .tabcontent{
+  .tab,
+  .rightIcons,
+  .rightHide,
+  .tabcontent,
+  .tab button{
     display: none;
-    height: 100%;
-    background-color: red;
-    border: 0px solid #ccc;
-    color: white;
+    z-index: 99 !important;
   }
 
-  #right {
-    padding-right: 0%;
-  }
+
+}
+
+  /* When it is disabled -> enable side panel menu */
+
   #left {
     padding-right: -20%;
   }
+
+@media screen and (min-width:760px) {
+
+  #sideMenu,
+  .side-navi-item,
+  .side-navi-data,
+  .side-navi-tab {  margin: 0; padding: 0;  }
+  #sideMenu{
+  display: none;
+}
+
+
+
 
 }

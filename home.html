@@ -12,10 +12,31 @@
   <meta name="Atypon Assignment" content="HTML5">
   <meta name="Nader Nasr" content="Atypon Assignment">
   <link rel="stylesheet" href="style.css">
+  <script src="SideMenu.js"></script>
+  <script type="text/javascript">
+
+      $(document).ready( function () {
+          /**
+           *  init sidenavi
+           *  first param String direction left or right
+           *  second param conf Object css data
+           **/
+          SideMenu.init('right', {
+              container : '#sideMenu',
+              defaultitem : '.side-navi-item-default',
+              item : '.side-navi-item',
+              data : '.side-navi-data',
+              tab : '.side-navi-tab',
+              active : '.active'
+          });
+
+      });
+
+  </script>
 
   <script>
   // Function for tabs on the left coloumn
-  function openCity(event, cityName) {
+  function openTab(event, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -25,9 +46,10 @@
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(tabName).style.display = "block";
     event.currentTarget.className += " active";
   }
+
 </script>
 
 </head>
@@ -36,54 +58,86 @@
   <nav class="navbar" id="nav">
     <a class="navbar-brand">Atypon</a>
   </nav>
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="col-4" id="right">
-        <!-- right coloumn icons-->
 
-        <div class="tab">
-          <button class="tablinks fixed=top" onclick="openCity(event, 'Figures')"><img src="Assets/figures.svg" style="width:15px;height:15px;border:0;"><figcaption>Figures</figcaption></button>
-          <button class="tablinks" onclick="openCity(event, 'References')"><img src="Assets/references.svg" style="width:15px;height:15px;border:0;"><figcaption>References</figcaption></button>
-          <button class="tablinks" onclick="openCity(event, 'Related')"><img src="Assets/related.svg" style="width:15px;height:15px;border:0;"><figcaption>Related</figcaption></button>
-          <button class="tablinks" onclick="openCity(event, 'Info')"><img src="Assets/info.svg" style="width:15px;height:15px;border:0;"><figcaption>Details</figcaption></button>
+<!-- Mobile <menu>
 
+</menu>  -->
+
+
+<!-- start sidenavi wrapper//-->
+<div id="sideMenu">
+    <!-- sidenavi menu //-->
+    <div class="side-navi-item-default"></div>
+    <div class="side-navi-item item1"><img src="Assets/figures.svg" style="width:25px;height:25px;border:0;"></div>
+    <div class="side-navi-item item2"><img src="Assets/figures.svg" style="width:25px;height:25px;border:0;"></div>
+    <div class="side-navi-item item3"><img src="Assets/figures.svg" style="width:25px;height:25px;border:0;"></div>
+    <div class="side-navi-item item4"><img src="Assets/figures.svg" style="width:25px;height:25px;border:0;"></div>
+
+    <!-- sidenavi data //-->
+    <div class="side-navi-data">
+        <div class="side-navi-tab">
+            <div>Data Item 1</div>
+        </div>
+        <div class="side-navi-tab">
+            <div>Data Item 2</div>
+        </div>
+        <div class="side-navi-tab">
+            <div>Data Item 1</div>
+        </div>
+        <div class="side-navi-tab">
+            <div>Data Item 2</div>
+        </div>
+    </div>
+</div>
+<!-- Mobile END  -->
+<div class="flex-container">
+  <div class="row-fluid rightHide">
+    <div class="col-4" id="right">
+      <!-- right coloumn icons-->
+
+      <div class="tab">
+        <button class="tablinks fixed=top" onclick="openTab(event, 'Figures')"><img src="Assets/figures.svg" style="width:15px;height:15px;border:0;"><figcaption>Figures</figcaption></button>
+        <button class="tablinks" onclick="openTab(event, 'References')"><img src="Assets/references.svg" style="width:15px;height:15px;border:0;"><figcaption>References</figcaption></button>
+        <button class="tablinks" onclick="openTab(event, 'Related')"><img src="Assets/related.svg" style="width:15px;height:15px;border:0;"><figcaption>Related</figcaption></button>
+        <button class="tablinks" onclick="openTab(event, 'Info')"><img src="Assets/info.svg" style="width:15px;height:15px;border:0;"><figcaption>Details</figcaption></button>
+
+      </div>
+
+      <div id="Figures" class="tabcontent">
+        <p>Figures</p>
+        <p>
+          <img src="Assets/figure1.jpg" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
+          <img src="Assets/figure2.png" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
+          <img src="Assets/figure3.png" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
+        </p>
+      </div>
+
+      <div id="Info" class="tabcontent">
+        <h3>Info</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+          id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+          id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.</p>
         </div>
 
-        <div id="Figures" class="tabcontent">
-          <p>Figures</p>
-          <p>
-            <img src="Assets/figure1.jpg" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
-            <img src="Assets/figure2.png" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
-            <img src="Assets/figure3.png" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
-          </p>
-        </div>
-
-        <div id="Info" class="tabcontent">
-          <h3>Info</h3>
+        <div id="Related" class="tabcontent">
+          <h3>Related</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
             id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
             id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.</p>
           </div>
 
-          <div id="Related" class="tabcontent">
-            <h3>Related</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+          <div id="References" class="tabcontent">
+            <h3>References</h3>
+            <p>TLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
               id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
               id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.</p>
             </div>
 
-            <div id="References" class="tabcontent">
-              <h3>References</h3>
-              <p>TLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
-                id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
-                id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.</p>
-              </div>
 
-
-            </div>
+          </div>
             <div class="col-8" id="left">
               <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
             </br>
