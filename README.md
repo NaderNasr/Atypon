@@ -1,3 +1,7 @@
 # Atypon
 
-Use JQuery 3.x - As it supports internet explorer.
+## A responsive articles website built purely with only
+JavaScript
+HTML5
+CSS
+jQuery
