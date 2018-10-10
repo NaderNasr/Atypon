@@ -3,188 +3,186 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Atypon Assignment" content="HTML5">
+  <meta name="Nader Nasr" content="Atypon Assignment">
+
   <title>Atypon</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <meta name="Atypon Assignment" content="HTML5">
-  <meta name="Nader Nasr" content="Atypon Assignment">
   <link rel="stylesheet" href="style.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="SideMenu.js"></script>
+
   <script type="text/javascript">
+  $(document).ready( function () {
+    SideMenu.init('right', {
+      container : '#sideMenu',
+      defaultitem : '.side-navi-item-default',
+      item : '.side-navi-item',
+      data : '.side-navi-data',
+      tab : '.side-navi-tab',
+      active : '.active'
+    });
+  });
+</script>
 
-      $(document).ready( function () {
-          /**
-           *  init sidenavi
-           *  first param String direction left or right
-           *  second param conf Object css data
-           **/
-          SideMenu.init('right', {
-              container : '#sideMenu',
-              defaultitem : '.side-navi-item-default',
-              item : '.side-navi-item',
-              data : '.side-navi-data',
-              tab : '.side-navi-tab',
-              active : '.active'
-          });
-
-      });
-
-  </script>
-
-  <script>
-  // Function for tabs on the left coloumn
-  function openTab(event, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    event.currentTarget.className += " active";
+<script>
+// Function for tabs on the left coloumn
+function openTab(event, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
   }
-
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  event.currentTarget.className += " active";
+}
 </script>
 
 </head>
 <!-- hide body scroll -->
-<body scroll="no" style="overflow: hidden">
+<body scroll="no-hidden" style="overflow: hidden">
   <nav class="navbar" id="nav">
     <a class="navbar-brand">Atypon</a>
   </nav>
-
-<!-- Mobile <menu>
-
+  <!-- Mobile <menu>
 </menu>  -->
-
-
 <!-- start sidenavi wrapper//-->
 <div id="sideMenu">
-    <!-- sidenavi menu //-->
-    <div class="side-navi-item-default"></div>
-    <div class="side-navi-item item1"><img src="Assets/figures.svg" style="width:25px;height:25px;border:0;"></div>
-    <div class="side-navi-item item2"><img src="Assets/figures.svg" style="width:25px;height:25px;border:0;"></div>
-    <div class="side-navi-item item3"><img src="Assets/figures.svg" style="width:25px;height:25px;border:0;"></div>
-    <div class="side-navi-item item4"><img src="Assets/figures.svg" style="width:25px;height:25px;border:0;"></div>
-
-    <!-- sidenavi data //-->
-    <div class="side-navi-data">
-        <div class="side-navi-tab">
-            <div>Data Item 1</div>
-        </div>
-        <div class="side-navi-tab">
-            <div>Data Item 2</div>
-        </div>
-        <div class="side-navi-tab">
-            <div>Data Item 1</div>
-        </div>
-        <div class="side-navi-tab">
-            <div>Data Item 2</div>
-        </div>
+  <!-- sidenavi menu //-->
+  <div class="side-navi-item-default"></div>
+  <div class="side-navi-item item1"><img src="Assets/figures.svg" style="width:25px;height:25px;border:0; background-color:lightgrey;"></div>
+  <div class="side-navi-item item2"><img src="Assets/info.svg" style="width:25px;height:25px;border:0; background-color:lightgrey;"></div>
+  <div class="side-navi-item item3"><img src="Assets/related.svg" style="width:25px;height:25px;border:0; background-color:lightgrey;"></div>
+  <div class="side-navi-item item4"><img src="Assets/references.svg" style="width:25px;height:25px;border:0; background-color:lightgrey;"></div>
+  <!-- sidenavi data //-->
+  <div class="side-navi-data">
+    <div class="side-navi-tab">
+      <div>Data Item 1</div>
     </div>
+    <div class="side-navi-tab">
+      <div>Data Item 2</div>
+    </div>
+    <div class="side-navi-tab">
+      <div>Data Item 1</div>
+    </div>
+    <div class="side-navi-tab">
+      <div>Data Item 2</div>
+    </div>
+  </div>
 </div>
 <!-- Mobile END  -->
 <div class="flex-container">
-  <div class="row-fluid rightHide">
+  <div class="row rightHide">
     <div class="rightHide">
-    <div class="col-4" id="right">
-      <!-- right coloumn icons-->
-
-      <div class="tab">
-        <button class="tablinks fixed=top" onclick="openTab(event, 'Figures')"><img src="Assets/figures.svg" style="width:15px;height:15px;border:0;"><figcaption>Figures</figcaption></button>
-        <button class="tablinks" onclick="openTab(event, 'References')"><img src="Assets/references.svg" style="width:15px;height:15px;border:0;"><figcaption>References</figcaption></button>
-        <button class="tablinks" onclick="openTab(event, 'Related')"><img src="Assets/related.svg" style="width:15px;height:15px;border:0;"><figcaption>Related</figcaption></button>
-        <button class="tablinks" onclick="openTab(event, 'Info')"><img src="Assets/info.svg" style="width:15px;height:15px;border:0;"><figcaption>Details</figcaption></button>
-
-      </div>
-
-      <div id="Figures" class="tabcontent">
-        <p>Figures</p>
-        <p>
-          <img src="Assets/figure1.jpg" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
-          <img src="Assets/figure2.png" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
-          <img src="Assets/figure3.png" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
-        </p>
-      </div>
-
-      <div id="Info" class="tabcontent">
-        <h3>Info</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
-          id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
-          id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.</p>
+      <div class="col-4" id="right">
+        <!-- right coloumn icons-->
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'Figures')"><img src="Assets/figures.svg" style="width:20px;height:20px;border:0;"><figcaption>Figures</figcaption></button>
+          <button class="tablinks" onclick="openTab(event, 'References')"><img src="Assets/references.svg" style="width:20px;height:20px;border:0;"><figcaption>References</figcaption></button>
+          <button class="tablinks" onclick="openTab(event, 'Related')"><img src="Assets/related.svg" style="width:20px;height:20px;border:0;"><figcaption>Related</figcaption></button>
+          <button class="tablinks" onclick="openTab(event, 'Info')"><img src="Assets/info.svg" style="width:20px;height:20px;border:0;"><figcaption>Details</figcaption></button>
         </div>
-
-        <div id="Related" class="tabcontent">
-          <h3>Related</h3>
+        <div id="Figures" class="tabcontent">
+          <p>Figures</p>
+          <p>
+            <img src="Assets/figure1.jpg" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
+            <img src="Assets/figure2.png" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
+            <img src="Assets/figure3.png" style="width:100%;height:100%;border:0;"><figcaption>Fig 1.A</figcaption>
+          </p>
+        </div>
+        <div id="Info" class="tabcontent">
+          <h3>Info</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
             id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
             id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.</p>
           </div>
-
-          <div id="References" class="tabcontent">
-            <h3>References</h3>
-            <p>TLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+          <div id="Related" class="tabcontent">
+            <h3>Related</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
               id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
               id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.</p>
             </div>
+            <div id="References" class="tabcontent">
+              <h3>References</h3>
+              <p><a href="https://www.mapbox.com/">Map Box</a></br>
+              <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.maps&hl=en_US">Google Maps</a></br>
 
-
+            </p>
+              </div>
+            </div>
           </div>
-        </div>
-            <div class="col-8" id="left">
-              <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
-            </br>
-            <a href="url">Chapter 1</a>&nbsp&nbsp
-            <a href="url">Chapter 2</a>&nbsp&nbsp
-            <a href="url">Chapter 3</a>&nbsp&nbsp
+          <div class="col-8" id="left">
+            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
+          </br>
+          <a href="url">Chapter 1</a>&nbsp&nbsp
+          <a href="url">Chapter 2</a>&nbsp&nbsp
+          <a href="url">Chapter 3</a>&nbsp&nbsp
           </br>
         </br>
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
         id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
         id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
-      </br>
+      </p>
     </br>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
-    id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+  </br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+        id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+        id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
+      </p>
+    </br>
   </br>
 </br>
-
-            </div>
-
-          </div>
-
-        </div>
-        <div class="col-8" id="leftMobile">
-          <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
-        </br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+      id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+      id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
+    </p>
+  </br>
+</br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+      id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+      id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
+    </p>
+  </br>
+</br>
+</div>
+</div>
+</div>
+      <div class="col-7" id="leftMobile">
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
+      </br>
         <a href="url">Chapter 1</a>&nbsp&nbsp
         <a href="url">Chapter 2</a>&nbsp&nbsp
         <a href="url">Chapter 3</a>&nbsp&nbsp
       </br>
     </br>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
-    id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
-    id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
-  </br>
-</br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
-id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
-</br>
-</br>
-
-        </div>
-      </body>
-    </html>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+          id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+          id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
+        </p>
+      </br>
+    </br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+          id pretium nibh luctus id. Morbi luctus elit ligula, in aliquam metus commodo ut.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non eros sit amet mauris dapibus ornare. Morbi luctus dolor eu risus finibus rhoncus. Aenean vestibulum, turpis nec pulvinar finibus, purus orci volutpat ipsum, id pulvinar tellus nisi euismod tellus. Donec rutrum, mi id ultrices elementum, lacus erat sodales urna, vitae aliquet mauris dolor ut ligula. Cras ornare orci mi,
+        </p>
+      </br>
+    </br>
+</div>
+</body>
+</html>

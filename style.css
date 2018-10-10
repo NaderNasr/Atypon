@@ -4,7 +4,6 @@ body{
   font-family: 'Roboto';
 }
 
-
 #nav {
   padding: 20px;
   text-align: left;
@@ -15,6 +14,7 @@ body{
 
 #left {
   padding-left: 15%;
+  padding-right: 5%;
   text-align: left;
   height:80%;
   position: absolute;
@@ -24,6 +24,7 @@ body{
   width: 100%;
   overflow-y: scroll;
 }
+
 #leftMobile {
   padding-left: 5%;
   text-align: left;
@@ -35,6 +36,7 @@ body{
   width: 100%;
   overflow-y: scroll;
 }
+
 #right {
   padding-right: 15%;
   height:80%;
@@ -44,26 +46,23 @@ body{
   bottom: 60%;
   right: 0;
   overflow-y: scroll;
-  width: 1200px;
 }
 
 #rightIcons {
-  height:2%;
+
   position:center;
   width:100%;
 }
 
 .tab {
-
+  float: center;
+  position: sticky;
   overflow: hidden;
-  border: 1px solid #ccc;
   background-color: #f1f1f1;
-
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-
   background-color: inherit;
   float: left;
   border: none;
@@ -72,7 +71,6 @@ body{
   padding: 14px 16px;
   transition: 0.3s;
   font-size: 17px;
-
 }
 
 /* Change background color of buttons on hover */
@@ -93,8 +91,6 @@ body{
   overflow-y: scroll;
   overflow: visible;
   height: auto;
-
-
 }
 
 .flex-container {
@@ -109,7 +105,16 @@ body{
   text-align: center;
   font-size: auto;
 }
-
+/* .grid-container {
+display: grid;
+grid-template-columns: auto auto auto;
+padding: 10px;
+}
+.grid-item {
+padding: 20px;
+font-size: 30px;
+text-align: center;
+} */
 /* jQuery side mobile menu css --------------------------------*/
 
 #sideMenu,
@@ -117,26 +122,26 @@ body{
 .side-navi-data,
 .side-navi-tab {  margin: 0; padding: 0;  }
 #sideMenu {
-    position: fixed;
-    right: 50px;
-    top: 35%;
+  position: fixed;
+  right: 50px;
+  top: 35%;
 }
 /* items */
 .side-navi-item-default {
-    height: 50px;
-    display: inline;
+  height: 50px;
+  display: inline;
 }
 .side-navi-item {
-    position: absolute;
-    left: 0;
-    display: inline-block;
-    width: 150px;
-    height: 50px;
-    transform: rotate(-90deg);
-    transform-origin: left top 0;
-    color: #fff;
-    background-color: grey;
-    cursor: pointer;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  transform: rotate(-90deg);
+  transform-origin: left top 0;
+  color: #fff;
+  background-color: grey;
+  cursor: pointer;
 }
 .side-navi-item.item1 {  top: 10px;  }
 .side-navi-item.item2 {  top: 200px;  }
@@ -148,24 +153,20 @@ body{
 .side-navi-item > div {  padding-top: 15px; text-align: center;  }
 /* data wrapper */
 .side-navi-data {
-    position: absolute;
-    top: 10;
-    left: 50px;
-    width: 650px;
-    height: 1250px;
-    background-color: grey;
+  position: absolute;
+  top: 10;
+  left: 50px;
+  width: 650px;
+  height: 1250px;
+  background-color: grey;
 }
-/* tab wrapper */
 .side-navi-tab {  display: inline;  }
 .side-navi-tab.active {  display: inline-block;  }
 .side-navi-tab > div {  padding: 30px;  }
-
-
-
 /* Media Queires  */
 
 @media screen and (max-width:760px) {
-/* 760px and below the initial menu screen will disable  */
+  /* 760px and below the initial menu screen will disable  */
 
   .tab,
   .rightIcons,
@@ -174,18 +175,12 @@ body{
   .tab button,
   #nav{
     display: none;
-
   }
-
-
 }
-
-
-  /* When it is disabled -> enable side panel menu */
-
-  #left {
-    padding-right: -20%;
-  }
+/* When it is disabled -> enable side panel menu */
+#left {
+  padding-right: -20%;
+}
 
 @media screen and (min-width:760px) {
 
@@ -195,10 +190,6 @@ body{
   .side-navi-tab {  margin: 0; padding: 0;  }
   #sideMenu,
   #leftMobile{
-  display: none;
-}
-
-
-
-
+    display: none;
+  }
 }

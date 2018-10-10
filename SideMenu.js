@@ -9,7 +9,7 @@ var SideMenu = ( function ($) {
 
 	var container = {},
 		cssElements = {},
-		posStep = 30,
+		posStep = 50,
 		posStart = null,
 		posEnd = null,
 		posDirection = '',
@@ -18,9 +18,10 @@ var SideMenu = ( function ($) {
 		activeIndex = -1,
 		changeVisibility = false;
 
-	function getPosStart () {
 
-		if (posStart === null) {
+	function getPosStart () { //get tab position
+
+		if (posStart === null) { //if the start is null apply algorithim
 
 			switch (posDirection) {
 				case 'right' :
